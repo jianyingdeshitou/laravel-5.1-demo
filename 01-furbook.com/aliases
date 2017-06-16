@@ -7,6 +7,8 @@ DBC=srv_db_1
 alias php='docker exec $DEVC php'
 alias composer='docker exec $DEVC composer'
 alias artisan='docker exec $DEVC php artisan'
+alias phpunit='docker exec $DEVC php /app/vendor/bin/phpunit'
+alias phpspec='docker exec $DEVC php /app/vendor/bin/phpspec'
 
 alias nginx='docker exec $WEBC nginx'
 
