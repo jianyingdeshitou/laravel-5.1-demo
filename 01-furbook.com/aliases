@@ -1,0 +1,14 @@
+
+DEVC=srv_dev_1
+PHPC=srv_php_1
+WEBC=srv_web_1
+DBC=srv_db_1
+
+alias php='docker exec $DEVC php'
+alias composer='docker exec $DEVC composer'
+alias artisan='docker exec $DEVC php artisan'
+
+alias nginx='docker exec $WEBC nginx'
+
+alias mysql='docker exec -it $DBC mysql -uroot -pmysql'
+
