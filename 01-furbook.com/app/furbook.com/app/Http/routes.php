@@ -25,3 +25,8 @@ Route::get('cats/{id}', function($id) {
     return sprintf('Cat #%d', $id);
 })->where('id', '[0-9]+');
 
+// GET /about
+Route::get('about', function() {
+    return view('about')->with('number_of_cats', 9000);
+});
+
