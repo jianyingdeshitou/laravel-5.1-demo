@@ -12,5 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('cats');
 });
+
+// GET /cats
+Route::get('cats', function() {
+    return 'All cats';
+});
+
+// GET /cats/{id}
+Route::get('cats/{id}', function($id) {
+    return sprintf('Cat #%d', $id);
+})->where('id', '[0-9]+');
+
