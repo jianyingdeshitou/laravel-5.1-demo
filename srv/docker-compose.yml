@@ -1,0 +1,48 @@
+web:
+    image: 'nginx-d8'
+#     restart: always
+    command: '/cmd/start-web.sh'
+    links:
+        - 'php'
+    ports:
+        - '80:80'
+    volumes:
+        - './app/laravel:/var/www/laravel'
+        - './app/pma:/var/www/pma'
+        - './cfg/nginx/sites-available:/etc/nginx/sites-available'
+        - './cmd:/cmd'
+
+php:
+    image: 'php5-d8'
+#     restart: always
+    command: '/cmd/start-php.sh'
+    expose:
+        - '9000'
+    links:
+        - 'db'
+    volumes:
+        - './app/laravel:/var/www/laravel'
+        - './app/pma:/var/www/pma'
+        - './cfg/php5-fpm/pool.d:/etc/php5/fpm/pool.d'
+        - './cmd:/cmd'
+        
+db:
+    image: 'mysql-d8'
+#     restart: always
+    command: '/cmd/start-db.sh'
+    expose:
+        - '3306'
+    volumes:
+        - './cfg/mysql/my.cnf:/etc/mysql/my.cnf'
+        - './cmd:/cmd'
+        - './db:/var/lib/mysql'
+
+dev:
+    image: 'php5-d8'
+#     restart: always
+    command: '/cmd/start-dev.sh'
+    volumes:
+        - './app/laravel:/app'
+        - './cmd:/cmd'
+    working_dir: /app
+
