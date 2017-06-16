@@ -5,12 +5,18 @@ WEBC=srv_web_1
 DBC=srv_db_1
 
 alias php='docker exec $DEVC php'
+alias phpunit='php /app/vendor/bin/phpunit'
+alias phpspec='php /app/vendor/bin/phpspec'
+
 alias composer='docker exec $DEVC composer'
+alias cps='docker exec $DEVC composer'
+alias cps-dal='cps dump-autoload'
+
 alias artisan='docker exec $DEVC php artisan'
-alias phpunit='docker exec $DEVC php /app/vendor/bin/phpunit'
-alias phpspec='docker exec $DEVC php /app/vendor/bin/phpspec'
+alias ats='docker exec $DEVC php artisan'
+alias ats-mgt='ats migrate'
 
 alias nginx='docker exec $WEBC nginx'
 
-alias mysql='docker exec -it $DBC mysql -uroot -pmysql'
+alias mysql='docker exec -it $DBC mysql -uroot'
 

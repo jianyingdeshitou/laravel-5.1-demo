@@ -41,6 +41,8 @@ dev:
     image: 'php5-d8'
 #     restart: always
     command: '/cmd/start-dev.sh'
+    links:
+        - 'db'
     volumes:
         - './app/furbook.com:/app'
         - './cmd:/cmd'
