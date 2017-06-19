@@ -137,7 +137,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        Collective\Html\HtmlServiceProvideri::class,
+        Collective\Html\HtmlServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -147,6 +147,7 @@ return [
         Furbook\Providers\EventServiceProvider::class,
         Furbook\Providers\RouteServiceProvider::class,
 
+        Furbook\Providers\ComposerServiceProvider::class,
     ],
 
     /*
