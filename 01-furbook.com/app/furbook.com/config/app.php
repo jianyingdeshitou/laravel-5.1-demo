@@ -137,6 +137,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        Collective\Html\HtmlServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -145,6 +147,7 @@ return [
         Furbook\Providers\EventServiceProvider::class,
         Furbook\Providers\RouteServiceProvider::class,
 
+        Furbook\Providers\ComposerServiceProvider::class,
     ],
 
     /*
@@ -193,6 +196,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
+        'Form' => Collective\Html\FormFacade::class,
+        'HTML' => Collective\Html\HtmlFacade::class,
     ],
 
 ];

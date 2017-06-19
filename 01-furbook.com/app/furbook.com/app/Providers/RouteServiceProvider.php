@@ -5,6 +5,8 @@ namespace Furbook\Providers;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
+use Furbook\Cat;
+
 class RouteServiceProvider extends ServiceProvider
 {
     /**
@@ -25,8 +27,9 @@ class RouteServiceProvider extends ServiceProvider
     public function boot(Router $router)
     {
         //
-
         parent::boot($router);
+
+        $router->model('cat', 'Furbook\Cat');
     }
 
     /**
