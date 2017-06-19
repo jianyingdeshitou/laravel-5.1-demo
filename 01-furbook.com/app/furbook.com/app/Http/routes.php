@@ -11,13 +11,25 @@
 |
 */
 
+// GET /
 Route::get('/', function () {
     return redirect('cats');
 });
 
 // GET /cats
 Route::get('cats', function() {
-    return 'All cats';
+    $cats = Furbook\Cat::all();
+    return view('cats.index')->with('cats', $cats);
+});
+
+// GET /cats/breeds/{name}
+Route::get('cats/breeds/{name}', function($name) {
+    $breed = Furbook\Breed::with('cats')
+        ->whereName($name)
+        ->first();
+    return view('cats.index')
+        ->with('breed', $breed)
+        ->with('cats', $breed->cats);
 });
 
 // GET /cats/{id}
