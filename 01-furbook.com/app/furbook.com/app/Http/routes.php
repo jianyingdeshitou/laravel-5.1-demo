@@ -34,8 +34,14 @@ Route::get('cats/breeds/{name}', function($name) {
 
 // GET /cats/{id}
 Route::get('cats/{id}', function($id) {
-    return sprintf('Cat #%d', $id);
+    $cat = Furbook\Cat::find($id);
+    return view('cats.show')->with('cat', $cat);
 })->where('id', '[0-9]+');
+
+// GET /cats/{cat}
+Route::get('cats/{cat}', function(Furbook\Cat $cat) {
+    return view('cats.show')->with('cat', $cat);
+});
 
 // GET /about
 Route::get('about', function() {
