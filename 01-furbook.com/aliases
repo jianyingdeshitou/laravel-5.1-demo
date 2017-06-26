@@ -4,8 +4,8 @@ PHPC=srv_php_1
 WEBC=srv_web_1
 DBC=srv_db_1
 
-alias php='docker exec $DEVC php'
-alias phpunit='php /app/vendor/bin/phpunit'
+alias php='docker exec -it $DEVC php'
+alias phpunit='php /app/vendor/bin/phpunit --colors'
 alias phpspec='php /app/vendor/bin/phpspec'
 
 alias composer='docker exec $DEVC composer'
