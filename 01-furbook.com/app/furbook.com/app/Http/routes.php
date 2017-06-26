@@ -66,7 +66,12 @@ Route::put('cats/{cat}', function(Furbook\Cat $cat) {
         ->withSuccess('Cat has been updated.');
 });
 
-Route::delete('cats/{cat}', function(Furbook\Cat $cat) {
+Route::get('cats/{id}/delete', function($id) {
+    $cat = Furbook\Cat::find($id);
+    if (empty($cat)) {
+        return view('errors.404');
+    }
+
     $cat->delete();
     return redirect('cats')
         ->withSuccess('Cat has been deleted.');

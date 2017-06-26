@@ -16,7 +16,7 @@
 <p>Date of Birth: {{ $cat->date_of_birth }}</p>
 <p>
 @if ($cat->breed)
-    Breed: {{ link_to('cats/breeds/'.$cat->breed->name, $cat->breed->name) }}
+    Breed: {!! link_to('cats/breeds/'.$cat->breed->name, $cat->breed->name) !!}
 @endif
 </p>
 @stop
