@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Post
+        psr4_prefix: Post
+        src_path: app
