@@ -12,5 +12,6 @@
 */
 
 Route::get('/', 'BlogController@index');
-Route::get('post/{slug}', 'BlogController@show');
+//Route::get('post/{slug}', ['posts' => 'BlogController@show']);
+Route::get('blog/{slug}', 'BlogController@show');
 
