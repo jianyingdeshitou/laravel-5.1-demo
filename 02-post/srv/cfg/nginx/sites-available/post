@@ -9,7 +9,7 @@ server {
 
 	server_name laravel.pde.vbox;
 
-	root /var/www/furbook.com/public;
+	root /var/www/post/public;
 	index index.html index.php;
 
 	location / {

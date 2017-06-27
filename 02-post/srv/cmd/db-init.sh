@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "CREATE USER 'furbook'@'%' IDENTIFIED BY 'furbook'" | mysql -uroot
-echo "GRANT ALL PRIVILEGES ON *.* TO 'furbook'@'%' WITH GRANT OPTION" | mysql -uroot
-echo "CREATE DATABASE furbook;" | mysql -ufurbook -pfurbook
+echo "CREATE USER 'post'@'%' IDENTIFIED BY 'post'" | mysql -uroot
+echo "GRANT ALL PRIVILEGES ON *.* TO 'post'@'%' WITH GRANT OPTION" | mysql -uroot
+echo "CREATE DATABASE post;" | mysql -upost -ppost
 
