@@ -643,15 +643,15 @@ Route::delete('cats/{cat}', function(Furbook\Cat $cat) {
 Route::resource('cat', 'CatController');
 ```
 
-|Verb| Path| Action| Route Name|
-|-|-|-|-|
-|GET |/cat| index| cat.index|
-|GET |/cat/create |create| cat.create|
-|POST |/cat |store| cat.store|
-|GET |/cat/{id} |show |cat.show|
-|GET |/cat/{id}/edit |edit |cat.edit|
-|PUT/PATCH |/cat/{id} |update| cat.update|
-|DELETE |/cat/{id} |destroy| cat.destroy|
+| Verb      | Path           | Action  | Route Name  |
+|-----------|----------------|---------|-------------|
+| GET       | /cat           | index   | cat.index   |
+| GET       | /cat/create    | create  | cat.create  |
+| POST      | /cat           | store   | cat.store   |
+| GET       | /cat/{id}      | show    | cat.show    |
+| GET       | /cat/{id}/edit | edit    | cat.edit    |
+| PUT/PATCH | /cat/{id}      | update  | cat.update  |
+| DELETE    | /cat/{id}      | destroy | cat.destroy |
 
 ```
 php artisan make:controller CatController
