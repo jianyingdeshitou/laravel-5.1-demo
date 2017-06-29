@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $tasks = Task\Task::orderBy('created_at', 'asc')->get();
+
+    return view('tasks', [
+        'tasks' => $tasks
+    ]);
 });
+
+Route::resource('task','TaskController');
+
+
