@@ -9,17 +9,35 @@ use Task\Http\Controllers\Controller;
 
 use Validator;
 use Task\Task;
+use Task\Repositories\TaskRepository;
 
 class TaskController extends Controller
 {
+
+    protected $tasks;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(TaskRepository $tasks)
+    {
+        $this->middleware('auth');
+        $this->tasks = $tasks;
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+        return view('tasks', [
+            'tasks' => $this->tasks->forUser($request->user()),
+        ]);
     }
 
     /**
@@ -51,9 +69,9 @@ class TaskController extends Controller
                 ->withErrors($validator);
         }
 
-        $task = new Task;
-        $task->name = $request->name;
-        $task->save();
+        $request->user()->tasks()->create([
+            'name' => $request->name,
+        ]);
 
         return redirect('/');
     }
@@ -98,10 +116,11 @@ class TaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, Task $task)
     {
         //
-        Task::findOrFail($id)->delete();
+        $this->authorize('destroy', $task);
+        $task->delete();
         return redirect('/');
     }
 }

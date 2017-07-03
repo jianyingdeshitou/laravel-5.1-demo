@@ -145,6 +145,8 @@ return [
         Task\Providers\EventServiceProvider::class,
         Task\Providers\RouteServiceProvider::class,
 
+        Barryvdh\Debugbar\ServiceProvider::class,
+
     ],
 
     /*
