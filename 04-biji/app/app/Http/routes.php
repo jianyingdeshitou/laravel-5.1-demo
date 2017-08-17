@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::group(['namespace' => 'Auth'], function() {
+    //登录、注册、退出路由
+    get('auth/login','AuthController@getLogin');
+    post('auth/login','AuthController@postLogin');
+
+    get('auth/register','AuthController@getRegister');
+    post('auth/register','AuthController@postRegister');
+
+    get('auth/logout','AuthController@getLogout');
+});
+
