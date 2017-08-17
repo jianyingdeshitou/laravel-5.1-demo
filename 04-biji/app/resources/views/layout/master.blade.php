@@ -8,7 +8,7 @@
 
     <title>笔友 | Be yourself</title>
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     @yield('script')
 </head>
 <body>
