@@ -11,13 +11,14 @@
     <link href="https://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     @yield('script')
 </head>
+
 <body>
 <div class="container" style="margin: 60px auto;">
     <div class="container-fluid">
         <div class="row">
             @yield('return')
             <div class="col-md-5 col-md-offset-3">
-                @include('layout.panel')
+                @include('auth.layout.panel')
             </div>
         </div>
     </div>

@@ -23,6 +23,9 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+    protected $maxLoginAttempts = 5;
+    protected $redirectPath = '/biji';
+
     /**
      * Create a new authentication controller instance.
      *
