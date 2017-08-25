@@ -1,7 +1,7 @@
 @extends('auth.layout.master')
 
 @section('script')
-    <link href="{{ asset('css/auth.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/auth.css') }}" rel="stylesheet">
 
     <script src="https://cdn.bootcss.com/jquery/1.10.1/jquery.min.js"></script>
     <script language="JavaScript" src="{{ URL::asset('/') }}js/auth.js"></script>

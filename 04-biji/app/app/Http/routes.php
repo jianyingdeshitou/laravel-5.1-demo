@@ -27,3 +27,7 @@ Route::group(['namespace' => 'Auth'], function() {
     get('auth/logout','AuthController@getLogout');
 });
 
+Route::group(['namespace' => 'Biji', 'middleware' => 'auth'], function(){
+    resource('/biji','BijiController');
+});
+
