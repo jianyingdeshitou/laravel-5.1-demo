@@ -1,13 +1,10 @@
 @extends('biji.layout.master')
 
 @section('script')
-    <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('jquery/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('jquery/jquery.zclip.js') }}"></script>
 
     <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
-
-    <script type="text/javascript" src="{{ asset('js/biji.js') }}"></script>
-
-    <script type="text/javascript" src="{{ asset('js/jquery.zclip.js') }}"></script>
 
     <script type="text/javascript" src="{{ asset('js/atip.js') }}"></script>
 
@@ -18,9 +15,7 @@
     <script type="text/javascript" src="{{ asset('js/copy.js') }}"></script>
 
     {{--引入artDialog插件--}}
-    <link rel="stylesheet" href="{{ asset('/css/ui-dialog.css') }}">
-
-    <script type="text/javascript" src="{{ asset('js/dialog-min.js') }}"></script>
+    @include('biji.artdialog.script')
     {{--END--}}
 
     <script type="text/javascript" src="{{ asset('js/sign.js') }}"></script>
@@ -28,24 +23,13 @@
     <script type="text/javascript" src="{{ asset('js/dropdowns.js') }}"></script>
 
 
-
-
-    <!-- 引用jquery -->
-    <script type="text/javascript" src="{{ asset('js/umeditor/third-party/jquery.min.js') }}"></script>
-    <!-- 配置文件 -->
-    <script type="text/javascript" src="{{ asset('js/ueditor.config.js') }}"></script>
-    <!-- 编辑器源码文件 -->
-    <script type="text/javascript" src="{{ asset('js/ueditor.all.min.js') }}"></script>
-    <!-- 选择语言 -->
-    <script type="text/javascript" src="{{ asset('lang/zh-cn/zh-cn.js') }}"></script>
-    <!-- 实例化编辑器代码 -->
-    <script type="text/javascript">
-        $(function(){
-            var ue = UE.getEditor('container');
-        });
-    </script>
+    {{--引入artDialog插件--}}
+    @include('biji.umeditor.script')
+    {{--END--}}
 
     <link rel="stylesheet" href="{{ asset('css/biji.css') }}">
+
+    <script type="text/javascript" src="{{ asset('js/biji.js') }}"></script>
 
 @endsection
 
