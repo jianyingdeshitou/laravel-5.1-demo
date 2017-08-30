@@ -83,3 +83,5 @@ tags
 !.vscode/extensions.json
 
 # project
+!.env.example
+

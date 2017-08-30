@@ -4,7 +4,7 @@
     <script type="text/javascript" src="{{ asset('jquery/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('jquery/jquery.zclip.js') }}"></script>
 
-    <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bootstrap/bootstrap.js') }}"></script>
 
     <script type="text/javascript" src="{{ asset('js/atip.js') }}"></script>
 
@@ -34,20 +34,19 @@
 @endsection
 
 @section('nav')
-    @include('biji.partials.nav')
+    @include('biji.layout.nav')
 @endsection
 
 @section('list')
-    @include('biji.partials.list')
+    @include('biji.layout.list')
 @endsection
 
 @section('header')
-    @include('biji.partials.header')
+    @include('biji.layout.header')
 @endsection
 
 @section('content')
-    @include('biji.partials.content')
-@endsection
+    @include('biji.layout.content')
 
 {{--用户DIV--}}
 <div id = "user">
@@ -110,22 +109,8 @@
 {{--搜索笔记DIV--}}
 <div id="search" class="form-horizontal" role="form">
     <div style="float: left"><h3>搜索笔记</h3></div>
-    <form method="GET" action="{{ url('/biji/') }}">
-        <input type="text" name="search_biji" class="form-control" placeholder="按笔记内容搜索笔记" style="height: 50px;"/><br/>
-        <div class="form-group">
-            <div class="col-md-12">
-                <label>选择笔记本</label>
-                <select class="form-control" name="book_id">
-                    @foreach($books as $book)
-                        <option value="{{ $book->id }}">{{ $book->title }}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
-        <div style="float: right;">
-            <input type="submit" value="搜索" class="btn btn-default" style="width: 100%;"/>
-        </div>
-    </form>
 </div>
 {{--END--}}
+
+@endsection
 
