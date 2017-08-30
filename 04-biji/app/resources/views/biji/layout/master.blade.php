@@ -19,9 +19,7 @@
 <body>
 <div class="row">
     <div class="col-md-1">
-        <div style="margin:3em 0 0 0.2em">
             @yield('nav')
-        </div>
     </div>
     <div class="col-md-3">
         @yield('list')
