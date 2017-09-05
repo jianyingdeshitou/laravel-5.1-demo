@@ -38,7 +38,7 @@ db:
         - './db:/var/lib/mysql'
 
 dev:
-    image: 'dev-php5-d8'
+    image: 'dev-laravel-php5-d8'
 #     restart: always
     command: '/cmd/start-dev.sh'
     links:

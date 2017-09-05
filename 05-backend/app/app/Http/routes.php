@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['namespace' => 'Backend', 'prefix' => 'backend'], function() {
+    get('/', function () {
+        return 'welcome';
+    });
+
+    get('/login', 'Auth\AuthController@getLogin');
+});
