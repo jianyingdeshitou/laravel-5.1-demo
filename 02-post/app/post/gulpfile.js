@@ -12,5 +12,11 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
+    mix.scripts(['jquery.js',
+            'bootstrap.js',
+            'jquery.dataTables.js',
+            'datatables-bootstrap3.js',
+    ], 'public/js/admin.js')
     mix.sass('app.scss');
+    mix.sass('admin.scss');
 });

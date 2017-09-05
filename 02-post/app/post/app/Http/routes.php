@@ -22,3 +22,13 @@ Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 Route::get('profile','UserController@profile');
+
+// Admin
+Route::group(['namespace' => 'Admin', 'middleware' => 'auth', 'prefix' => 'admin'], function () {
+    get('/', function () {
+        return redirect('admin/post');
+    });
+
+    resource('post', 'PostController');
+});
+
