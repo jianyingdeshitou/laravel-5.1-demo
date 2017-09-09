@@ -30,5 +30,6 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth', 'prefix' => 'admin
     });
 
     resource('post', 'PostController');
+    resource('tag', 'TagController', ['except' => 'show']);
 });
 

@@ -8,29 +8,34 @@ gulp.task("copyfiles", function () {
     var pub_path = 'public/'
 
     // jquery
-    gulp.src(npm_path + 'jquery/dist/jquery.js')
-        .pipe(gulp.dest(res_path + "js/"));
+    gulp.src(npm_path + 'jquery/dist/jquery.min.js')
+        .pipe(gulp.dest(pub_path + "js/"));
 
     // bootstrap
-    gulp.src(npm_path + 'bootstrap/dist/js/bootstrap.js')
-        .pipe(gulp.dest(res_path + "js/"));
+    gulp.src(npm_path + 'bootstrap/dist/js/bootstrap.min.js')
+        .pipe(gulp.dest(pub_path + "js/"));
+    gulp.src(npm_path + 'bootstrap/dist/css/bootstrap.min.css')
+        .pipe(gulp.dest(pub_path + "css/"));
     gulp.src(npm_path + 'bootstrap/dist/fonts/**')
         .pipe(gulp.dest(pub_path + "fonts/"));
 
     // fontawesome
+    gulp.src(npm_path + 'font-awesome/css/font-awesome.min.css')
+        .pipe(gulp.dest(pub_path + "css/"));
     gulp.src(npm_path + 'font-awesome/fonts/**')
         .pipe(gulp.dest(pub_path + "fonts/"));
 
     // datatables
-    gulp.src(npm_path + 'datatables/media/js/jquery.dataTables.js')
-        .pipe(gulp.dest(res_path + "js/"));
+    gulp.src(npm_path + 'datatables/media/js/jquery.dataTables.min.js')
+        .pipe(gulp.dest(pub_path + "js/"));
+    gulp.src(npm_path + 'datatables/media/css/jquery.dataTables.min.css')
+        .pipe(gulp.dest(pub_path + "css/"));
 
     // datatables-bootstrap3-plugin
     gulp.src(npm_path + 'datatables-bootstrap3-plugin/media/css/datatables-bootstrap3.css')
-        .pipe(rename('datatables-bootstrap3.scss'))
-        .pipe(gulp.dest(res_path + "sass/"));
+        .pipe(gulp.dest(pub_path + "css/"));
     gulp.src(npm_path + 'datatables-bootstrap3-plugin/media/js/datatables-bootstrap3.js')
-        .pipe(gulp.dest(res_path + "js/"));
+        .pipe(gulp.dest(pub_path + "js/"));
 });
 
 /*
@@ -45,11 +50,11 @@ gulp.task("copyfiles", function () {
  */
 
 elixir(function(mix) {
-    mix.scripts(['jquery.js',
-            'bootstrap.js',
-            'jquery.dataTables.js',
+//    mix.scripts(['jquery.js',
+//            'bootstrap.js',
+//            'jquery.dataTables.js',
 //            'datatables-bootstrap3.js',
-    ], 'public/js/admin.js')
+//    ], 'public/js/admin.js')
     mix.sass('app.scss');
     mix.sass('admin.scss');
 });
