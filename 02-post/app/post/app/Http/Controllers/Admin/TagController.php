@@ -42,6 +42,13 @@ class TagController extends Controller
     public function create()
     {
         //
+        $data = array();
+
+        foreach ($this->fields as $field => $value) {
+            $data[$field] = old($field, $value);
+        }
+
+        return view('admin.tag.create', $data);
     }
 
     /**
@@ -53,6 +60,14 @@ class TagController extends Controller
     public function store(Request $request)
     {
         //
+        $tag = new Tag();
+        foreach (array_keys($this->fields) as $field) {
+            $tag->$field = $request->get($field);
+        }
+
+        $tag->save();
+
+        return redirect('/admin/tag')->withSuccess("The tag '$tag->tag' was created.");
     }
 
     /**

@@ -10,8 +10,7 @@
     <link href={{ asset('css/bootstrap.min.css') }} rel="stylesheet">
     <link href={{ asset('css/admin.css') }} rel="stylesheet">
     <link href={{ asset('css/font-awesome.min.css') }} rel="stylesheet">
-    <link href={{ asset('css/jquery.dataTables.min.css') }} rel="stylesheet">
-    <link href={{ asset('css/datatables-bootstrap3.css') }} rel="stylesheet">
+    <link href="https://cdn.bootcss.com/datatables/1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet">
     @yield('styles')
 
     <!--[if lt IE 9]>
@@ -43,8 +42,8 @@
 
 <script src={{ asset('js/jquery.min.js') }}></script>
 <script src={{ asset('js/bootstrap.min.js') }}></script>
-<script src={{ asset('js/jquery.dataTables.min.js') }}></script>
-<script src={{ asset('js/datatables-bootstrap3.js') }}></script>
+<script src="https://cdn.bootcss.com/datatables/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.bootcss.com/datatables/1.10.16/js/dataTables.bootstrap.min.js"></script>
 
 @yield('scripts')
 
