@@ -24,18 +24,6 @@ gulp.task("copyfiles", function () {
         .pipe(gulp.dest(pub_path + "css/"));
     gulp.src(npm_path + 'font-awesome/fonts/**')
         .pipe(gulp.dest(pub_path + "fonts/"));
-
-    // datatables
-    gulp.src(npm_path + 'datatables/media/js/jquery.dataTables.min.js')
-        .pipe(gulp.dest(pub_path + "js/"));
-    gulp.src(npm_path + 'datatables/media/css/jquery.dataTables.min.css')
-        .pipe(gulp.dest(pub_path + "css/"));
-
-    // datatables-bootstrap3-plugin
-    gulp.src(npm_path + 'datatables-bootstrap3-plugin/media/css/datatables-bootstrap3.css')
-        .pipe(gulp.dest(pub_path + "css/"));
-    gulp.src(npm_path + 'datatables-bootstrap3-plugin/media/js/datatables-bootstrap3.js')
-        .pipe(gulp.dest(pub_path + "js/"));
 });
 
 /*
