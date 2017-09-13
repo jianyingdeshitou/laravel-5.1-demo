@@ -8,6 +8,8 @@ use Post\Http\Requests;
 use Post\Http\Controllers\Controller;
 
 use Post\Tag;
+use Post\Http\Requests\TagCreateRequest;
+use Post\Http\Requests\TagUpdateRequest;
 
 class TagController extends Controller
 {
@@ -54,10 +56,10 @@ class TagController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  Post\Http\Requests\TagCreateRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TagCreateRequest $request)
     {
         //
         $tag = new Tag();
@@ -102,11 +104,11 @@ class TagController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  Post\Http\Requests\TagUpdateRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TagUpdateRequest $request, $id)
     {
         //
         $tag = Tag::findOrFail($id);
