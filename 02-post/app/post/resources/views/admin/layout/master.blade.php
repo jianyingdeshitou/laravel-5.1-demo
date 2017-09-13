@@ -7,10 +7,10 @@
 
     <title>{{ config('blog.title') }} Admin</title>
 
-    <link href={{ asset('css/bootstrap.min.css') }} rel="stylesheet">
+    @include('admin.layout.link');
+
     <link href={{ asset('css/admin.css') }} rel="stylesheet">
-    <link href={{ asset('css/font-awesome.min.css') }} rel="stylesheet">
-    <link href="https://cdn.bootcss.com/datatables/1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet">
+
     @yield('styles')
 
     <!--[if lt IE 9]>
@@ -40,10 +40,7 @@
 
 @yield('content')
 
-<script src={{ asset('js/jquery.min.js') }}></script>
-<script src={{ asset('js/bootstrap.min.js') }}></script>
-<script src="https://cdn.bootcss.com/datatables/1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.bootcss.com/datatables/1.10.16/js/dataTables.bootstrap.min.js"></script>
+@include('admin.layout.script');
 
 @yield('scripts')
 
