@@ -24,6 +24,8 @@
                 <span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
+                <li><a href="/profile">Profile</a></li>
+                <li class="divider"></li>
                 <li><a href="/auth/logout">Logout</a></li>
             </ul>
         </li>
