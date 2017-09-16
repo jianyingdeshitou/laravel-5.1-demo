@@ -9,7 +9,7 @@
 | It's a breeze. Simply tell Laravel the URIs it should respond to
 | and give it the controller to call when that URI is requested.
 |
-*/
+ */
 
 // Blog
 Route::get('/', 'BlogController@index');
@@ -26,10 +26,19 @@ Route::get('profile','UserController@profile');
 // Admin
 Route::group(['namespace' => 'Admin', 'middleware' => 'auth', 'prefix' => 'admin'], function () {
     get('/', function () {
+//        return action('PostController@index');
         return redirect('admin/post');
     });
 
     resource('post', 'PostController');
     resource('tag', 'TagController', ['except' => 'show']);
+
+    get('upload', 'UploadController@index');
+    get('uploads', 'UploadController@viewFile');
+    // upload
+    post('upload/file', 'UploadController@uploadFile');
+    delete('upload/file', 'UploadController@deleteFile');
+    post('upload/folder', 'UploadController@createFolder');
+    delete('upload/folder', 'UploadController@deleteFolder');
 });
 
