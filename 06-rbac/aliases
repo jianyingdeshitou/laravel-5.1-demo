@@ -1,0 +1,26 @@
+
+DEVC=srv_dev_1
+PHPC=srv_php_1
+WEBC=srv_web_1
+DBC=srv_db_1
+
+alias dev='docker exec -it $DEVC bash'
+
+alias php='docker exec -it $DEVC php'
+alias phpunit='php /app/vendor/bin/phpunit'
+alias phpspec='php /app/vendor/bin/phpspec'
+
+alias composer='docker exec -it $DEVC composer'
+
+alias artisan='docker exec -it $DEVC php artisan'
+alias tinker='artisan tinker'
+
+alias node='docker exec -it $DEVC node'
+alias npm='docker exec -it $DEVC npm'
+alias gulp='docker exec -it $DEVC gulp'
+
+alias nginx='docker exec $WEBC nginx'
+
+alias mysql='docker exec -it $DBC mysql'
+alias dba='mysql -uroot'
+
