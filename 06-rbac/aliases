@@ -11,6 +11,7 @@ alias phpunit='php /app/vendor/bin/phpunit'
 alias phpspec='php /app/vendor/bin/phpspec'
 
 alias composer='docker exec -it $DEVC composer'
+alias dal='composer dump-autoload'
 
 alias artisan='docker exec -it $DEVC php artisan'
 alias tinker='artisan tinker'
