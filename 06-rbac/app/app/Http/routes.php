@@ -27,3 +27,9 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::get('home', function () {
     return view('home')->withArticles(\App\Article::all());
 });
+
+Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
+    Route::get('/', 'HomeController@index');
+    Route::get('article', 'ArticleController@index');
+});
+
