@@ -30,6 +30,6 @@ Route::get('home', function () {
 
 Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
     Route::get('/', 'HomeController@index');
-    Route::get('article', 'ArticleController@index');
+    Route::resource('article', 'ArticleController');
 });
 
